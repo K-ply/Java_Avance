@@ -25,8 +25,15 @@ public class CarController {
         return this.carDao.findAll();
     }
 
-    @GetMapping(value = "/cars/{id}")
+    @GetMapping(value = "/car/{id}")
     public Car afficherUnCar(@PathVariable int id) {
         return this.carDao.findById(id);
     }
+
+    @GetMapping("/car/save")
+    public void supprimerUnCar(){
+        Car car = new Car(25, "bibi","bobo", "bubu");
+        this.carDao.save(car);
+    }
+
 }
