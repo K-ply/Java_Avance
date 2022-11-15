@@ -7,9 +7,10 @@ import java.util.List;
 
 public interface CarDao {
 
-
     List<Car> findAll();
     Car findById(int id);
     Car save(Car car);
+    Car update(int id, Car car);
+
 
 }

@@ -37,4 +37,13 @@ public class CarDaoImpl implements CarDao {
         cars.add(car);
         return null;
     }
+
+    @Override
+    public Car update(int id, Car car) {
+        cars.set(id, car);
+
+        return car;
+    }
+
+
 }
