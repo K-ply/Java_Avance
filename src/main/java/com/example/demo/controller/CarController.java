@@ -40,7 +40,4 @@ public class CarController {
         this.carDao.delete(id);
     }
 
-
-
-
 }

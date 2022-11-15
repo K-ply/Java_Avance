@@ -10,7 +10,7 @@ import java.util.List;
 public class CarDaoImpl implements CarDao {
     public List<Car> cars = new ArrayList<>();
     public CarDaoImpl() {
-        cars.add(new Car(1, "clio", "Renault", "bleu"));
+        cars.add(new Car(8, "clio", "Renault", "bleu"));
         cars.add(new Car(2, "megane", "Renault", "rouge"));
         cars.add(new Car(3, "zoé", "Renault", "blanc"));
         cars.add(new Car(4, "trafic", "Renault", "noir"));
@@ -40,7 +40,8 @@ public class CarDaoImpl implements CarDao {
 
     @Override
     public Car update(int id, Car car) {
-        cars.set(id, car);
+        Car updateCar = findById(id);
+        cars.set(cars.indexOf(updateCar), car);
         return car;
     }
 
