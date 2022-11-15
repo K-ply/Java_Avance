@@ -44,6 +44,10 @@ public class CarDaoImpl implements CarDao {
 
         return car;
     }
+    public Car delete(int id, Car car){
+        cars.remove(car);
+        return car;
+    }
 
 
 }

@@ -35,6 +35,10 @@ public class CarController {
       this.carDao.update(id, updateCar);
     }
 
+    @DeleteMapping("/car/{id}")
+    public void delete(@RequestBody Car deleteCar, @PathVariable int id){
+        this.carDao.delete(id, deleteCar);
+    }
 
 
 
