@@ -36,8 +36,8 @@ public class CarController {
     }
 
     @DeleteMapping("/car/{id}")
-    public void delete(@RequestBody Car deleteCar, @PathVariable int id){
-        this.carDao.delete(id, deleteCar);
+    public void delete(@PathVariable int id){
+        this.carDao.delete(id);
     }
 
 

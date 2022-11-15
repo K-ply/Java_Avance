@@ -12,7 +12,7 @@ public interface CarDao {
     Car save(Car car);
     Car update(int id, Car car);
 
-    Car delete(int id, Car car);
+    Car delete(int id);
 
 
 }

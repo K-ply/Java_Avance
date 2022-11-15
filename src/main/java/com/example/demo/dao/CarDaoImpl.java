@@ -41,12 +41,14 @@ public class CarDaoImpl implements CarDao {
     @Override
     public Car update(int id, Car car) {
         cars.set(id, car);
-
         return car;
     }
-    public Car delete(int id, Car car){
-        cars.remove(car);
-        return car;
+
+    @Override
+    public Car delete(int id){
+        Car carDelete = findById(id);
+        cars.remove(carDelete);
+        return carDelete;
     }
 
 
