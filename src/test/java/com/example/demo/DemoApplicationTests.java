@@ -34,7 +34,20 @@ class DemoApplicationTests {
         attenduValue.add(new Car(4, "trafic", "Renault", "noir"));
         attenduValue.add(new Car(5, "master", "Renault", "jaune"));
         assertEquals(recupValue.size(), attenduValue.size());
+
+        for(int i=0; attenduValue.size()>i; i++){
+            assertEquals(String.valueOf(recupValue.get(i)),(String.valueOf(attenduValue.get(i))));
+        }
     }
+    @Test
+    public void findById() throws Exception{
+        Car recupValue = carController.showCar(8);
+        Car attenduValue = new Car(8, "clio", "Renault", "bleu");
+        assertEquals(String.valueOf(recupValue), String.valueOf(attenduValue));
+
+    }
+
+
 
 
 }
