@@ -1,12 +1,10 @@
 package com.example.demo;
 
 import com.example.demo.controller.CarController;
-import com.example.demo.controller.PingController;
 import com.example.demo.model.Car;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +43,11 @@ class DemoApplicationTests {
         Car attenduValue = new Car(8, "clio", "Renault", "bleu");
         assertEquals(String.valueOf(recupValue), String.valueOf(attenduValue));
 
+    }
+    @Test
+    public void delete() throws Exception{
+        Car recupValue = carController.showCar(8);
+        Car attenduValue = new Car(8, "clio", "Renault", "bleu");
     }
 
 
