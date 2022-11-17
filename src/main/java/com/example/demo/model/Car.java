@@ -1,9 +1,21 @@
 package com.example.demo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+
 public class Car {
+    @Id
+    @GeneratedValue
    public int id;
-    public String model;
+    private String model;
     public String brand;
+
+    public Car() {
+
+    }
 
     public void setId(int id) {
         this.id = id;
