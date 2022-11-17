@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.example.demo.controller.CarController;
 import com.example.demo.model.Car;
+import net.bytebuddy.implementation.bytecode.ByteCodeAppender;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,14 +17,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class DemoApplicationTests {
 
     @Test
-    void contextLoads() throws Exception {
+    void contextLoads(){
         assertThat(carController).isNotNull();
     }
 
     @Autowired
     private CarController carController;
     @Test
-    public void getAll()throws Exception{
+    public void getAll(){
         List<Car> recupValue = carController.listeCars();
         List<Car>  attenduValue = new ArrayList<>();
         attenduValue.add(new Car(8, "clio", "Renault", "bleu"));
@@ -38,19 +39,18 @@ class DemoApplicationTests {
         }
     }
     @Test
-    public void findById() throws Exception{
+    public void findById(){
         Car recupValue = carController.showCar(8);
         Car attenduValue = new Car(8, "clio", "Renault", "bleu");
         assertEquals(String.valueOf(recupValue), String.valueOf(attenduValue));
 
     }
     @Test
-    public void delete() throws Exception{
-        Car recupValue = carController.showCar(8);
-        Car attenduValue = new Car(8, "clio", "Renault", "bleu");
+    public void delete(){
+        int recupValue = carController.listeCars().size();
+        carController.saveCar(new Car (5, "master", "Renault", "jaune"));
+        carController.delete(5);
+        int attenduValue = carController.listeCars().size();
+        assertEquals(recupValue, attenduValue);
     }
-
-
-
-
 }
