@@ -3,6 +3,8 @@ package com.example.demo.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 
@@ -10,7 +12,11 @@ public class Car {
     @Id
     @GeneratedValue
    public int id;
+    @NotBlank(message = "Name is mandatory")
+    @NotNull(message = "Ne peut pas être nul")
     private String model;
+    @NotBlank(message = "Name is mandatory")
+    @NotNull(message = "Ne peut pas être nul")
     public String brand;
 
     public Car() {

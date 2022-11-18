@@ -10,7 +10,7 @@ import java.util.List;
 public interface CarDao extends JpaRepository<Car, Integer> {
 
 //     List<Car> findAll();
-//     Car findById(int id);
+    // Car findById(int id);
 //     Car save(Car car);
 //    Car update(int id, Car car);
 //
